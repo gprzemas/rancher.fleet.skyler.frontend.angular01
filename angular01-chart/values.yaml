@@ -1,0 +1,33 @@
+image:
+  repository: skylerdocbuilder/angular01
+  tag: "1.0"
+  pullPolicy: Always
+
+#service:
+#  type: ClusterIP
+#  port: 80
+
+service:
+  type: NodePort
+  port: 80
+
+replicaCount: 1
+
+serviceAccount:
+  create: false
+  name: ""
+
+ingress:
+  enabled: false
+  className: ""
+  hosts:
+    - host: angular.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+httpRoute:
+  enabled: false
+
+autoscaling:
+  enabled: false

@@ -1,0 +1,10 @@
+defaultNamespace: angular01
+
+helm:
+  chart: ./angular01-chart
+
+targetCustomizations:
+- name: local
+  clusterSelector:
+    matchLabels:
+      env: dev
